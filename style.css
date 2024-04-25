@@ -1,3 +1,35 @@
 .modal {
     background: #c6d0ff7a;
 }
+
+.d-none {
+    display: none;
+}
+
+.img-radio img {
+    cursor: pointer;
+    /* dodatkowe style, takie jak border, padding, itp., w zależności od twoich potrzeb */
+}
+
+/* Styl dla aktywnego obrazka, po kliknięciu */
+input[type="radio"]:checked + label.img-radio img {
+    outline: 2px solid blue; /* lub inny styl wskazujący, że jest zaznaczone */
+}
+
+.img-radio img {
+    cursor: pointer;
+    width: 60px; /* ustalona szerokość */
+    height: 30px; /* ustalona wysokość */
+    object-fit: contain; /* zapewnia, że obrazek będzie skalowany w ramach zadanych wymiarów */
+    margin: 5px; /* opcjonalny odstęp */
+    border: 1px solid transparent; /* przezroczyste obramowanie */
+    border-radius: 10px; /* zaokrąglone brzegi */
+}
+
+/* Styl dla aktywnego obrazka, po kliknięciu */
+input[type="radio"]:checked + label.img-radio img {
+    border-color: blue; /* zmienia kolor obramowania na niebieski, gdy obrazek jest zaznaczony */
+    border-width: 2px; /* grubsza ramka po kliknięciu */
+    outline: none; /* usuwa domyślny outline po kliknięciu */
+}
+

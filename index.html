@@ -17,88 +17,98 @@
     <div class="container">
         <h1>Uzupełnij formularz</h1>
         <form id="form">
-            <div class="mb-3">
-                <label for="firstName" class="form-label">Imię</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required>
+            <div class="row mb-3" id="input-group">
+                <div class="col">
+                    <input type="text" class="form-control" id="firstName" placeholder="imię" required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="lastName" placeholder="nazwisko" required>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="lastName" class="form-label">Nazwisko</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required>
-            </div>
-            <div class="mb-3">
-                <label for="street" class="form-label">Ulica</label>
-                <input type="text" class="form-control" id="street" placeholder="Wpisz ulicę" required>
-            </div>
-            <div class="mb-3">
-                <label for="country" class="form-label">Kraj</label>
                 <select class="form-select" id="country" required>
-                    <option value="">Wybierz kraj</option>
-                    <!-- Options will be filled by JavaScript -->
+                    <option value="">kraj</option>
                 </select>
             </div>
+            <div class="row mb-3" id="input-group">
+                <div class="col">
+                    <input type="text" class="form-control" id="city" placeholder="miasto" required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="zipCode" placeholder="kod pocztowy" required>
+                </div>
+            </div>
+            <div class="row mb-3" id="input-group">
+                <div class="col">
+                    <input type="text" class="form-control" id="street" placeholder="ulica" required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="house_nbr" placeholder="numer domu" required>
+                </div>
+            </div>
             <div class="row mb-3">
-                <label for="phoneNumber" class="form-label">Numer telefonu komórkowego</label>
                 <div class="input-group">
                     <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
                         <option selected>Wybierz...</option>
                         <option value="+48">+48 (Polska)</option>
                         <option value="+1">+1 (Stany Zjednoczone)</option>
-                        <!-- Dodaj więcej opcji, jeśli jest to potrzebne -->
                     </select>
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy"
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="numer komórkowy"
                         required>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="city" class="form-label">Miasto</label>
-                <input type="text" class="form-control" id="city" placeholder="Wpisz miasto" required>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="adres email">
             </div>
             <div class="mb-3">
-                <label for="zipCode" class="form-label">Kod pocztowy</label>
-                <input type="text" class="form-control" id="zipCode" placeholder="Wpisz kod pocztowy" required>
+                <label class="form-label">Rodzaj przesyłki</label>
+                <div>
+                    <input type="radio" name="shippingMethod" id="shippingDPD" value="DPD" class="d-none">
+                    <label for="shippingDPD" class="img-radio">
+                        <img src="assets/dpd.png" alt="DPD">
+                    </label>
+
+                    <input type="radio" name="shippingMethod" id="shippingInPost" value="InPost" class="d-none">
+                    <label for="shippingInPost" class="img-radio">
+                        <img src="assets/inpost.png" alt="InPost">
+                    </label>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="shippingMethod" class="form-label">Rodzaj przesyłki</label>
-                <select class="form-select" id="shippingMethod" required>
-                    <option value="">Wybierz rodzaj przesyłki</option>
-                    <option value="DPD">DPD</option>
-                    <option value="InPost">InPost</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="paymentMethod" class="form-label">Rodzaj płatności</label>
-                <select class="form-select" id="paymentMethod" required>
-                    <option value="">Wybierz rodzaj płatności</option>
-                    <option value="karta">Karta</option>
-                    <option value="blik">BLIK</option>
-                    <option value="pośrednik">Pośrednik płatności</option>
-                </select>
+                <label class="form-label">Rodzaj płatności</label>
+                <div>
+                    <input type="radio" name="paymentMethod" id="paymentCard" value="karta" class="d-none">
+                    <label for="paymentCard" class="img-radio">
+                        <img src="assets/visa.png" alt="Karta">
+                    </label>
+
+                    <input type="radio" name="paymentMethod" id="paymentIntermediary" value="pośrednik" class="d-none">
+                    <label for="paymentIntermediary" class="img-radio">
+                        <img src="assets/paypal.png" alt="Pośrednik płatności">
+                    </label>
+
+                    <input type="radio" name="paymentMethod" id="paymentBLIK" class="form-control d-none">
+                    <label for="paymentBLIK" class="img-radio">
+                        <img src="assets/blik.png" alt="BLIK">
+                    </label>
+                </div>
             </div>
 
-            <!-- Dodatkowe pola, np. dane do faktury -->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="vatUE">
                 <label class="form-check-label" for="vatUE">VAT UE</label>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 d-none" id="vatNumberGroup">
                 <label for="vatNumber" class="form-label">VAT Number</label>
                 <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp">
-                <div id="vatHelp" class="form-text">Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego
-                    podmiotu gospodarczego.</div>
+                <div id="vatHelp" class="form-text">Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego podmiotu gospodarczego.</div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 d-none" id="invoiceDataGroup">
                 <label for="invoiceData" class="form-label">Dane do faktury</label>
                 <textarea class="form-control" id="invoiceData" rows="3" placeholder="Wpisz dane do faktury"></textarea>
             </div>
+
 
             <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#form-feedback-modal">submit</button>
